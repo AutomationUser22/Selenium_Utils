@@ -10,14 +10,14 @@ import java.util.Properties;
 
 public class ConfigUtils {
     private final Properties properties;
-    private static final Logger logger = LogManager.getLogger(ConfigUtils.class);
+    LoggerUtils logger = new LoggerUtils();
 
     public ConfigUtils(String configFilePath) {
         properties = new Properties();
         try (InputStream input = new FileInputStream(configFilePath)) {
             properties.load(input);
         } catch (IOException ex) {
-            logger.warn("Failed to load properties from {}", configFilePath, ex);
+            logger.warn("Failed to load properties from " + configFilePath, ex);
         }
     }
 

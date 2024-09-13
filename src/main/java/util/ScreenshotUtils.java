@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 
 public class ScreenshotUtils {
-    private static final Logger logger = LogManager.getLogger(ScreenshotUtils.class);
+    LoggerUtils logger = new LoggerUtils();
     public void takeScreenshot(WebDriver driver, String filePath) {
         TakesScreenshot screenshot = (TakesScreenshot) driver;
         File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
